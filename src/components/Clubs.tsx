@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { IconUsers } from "./Icons";
 import { clubs } from "../data";
-import { getIcon } from "../data/iconMap";
+import { IconInstagram } from "./Icons";
 import "./Clubs.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +20,7 @@ const Clubs: React.FC = () => {
         {
           opacity: 1, y: 0, scale: 1,
           duration: 0.6,
-          stagger: 0.08,
+          stagger: 0.06,
           ease: "power3.out",
           scrollTrigger: { trigger: ".clubs-grid", start: "top 85%" },
         }
@@ -41,7 +41,7 @@ const Clubs: React.FC = () => {
           </span>
           <h2 className="section-title">Find Your <span className="hand-underline">Tribe</span></h2>
           <p className="section-desc">
-            From coding to dance, there's a club for every passion. Explore and join today.
+            Active clubs at Adamas University — from coding to dance, there's a club for every passion.
           </p>
         </div>
 
@@ -53,10 +53,18 @@ const Clubs: React.FC = () => {
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="club-icon-wrap">
-                {getIcon(club.icon, 28)}
+              <div className="club-card-top">
+                <div className="club-logo-wrap">
+                  <img src={club.logo} alt={club.name} className="club-logo-img" loading="lazy" />
+                </div>
+                {club.instagram && (
+                  <a href={club.instagram} target="_blank" rel="noopener noreferrer" className="club-insta-icon" aria-label={`${club.name} Instagram`}>
+                    <IconInstagram size={16} />
+                  </a>
+                )}
               </div>
               <h3 className="club-name">{club.name}</h3>
+              <span className="club-subtitle">{club.subtitle}</span>
               <p className="club-desc">{club.desc}</p>
               <div className="club-tags">
                 {club.tags.map((tag) => (
@@ -64,18 +72,9 @@ const Clubs: React.FC = () => {
                 ))}
               </div>
               <div className="club-footer">
-                <span className="club-members">
-                  <IconUsers /> {club.members} members
-                </span>
-                <motion.button
-                  className="club-join"
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Join
-                </motion.button>
+                <Link to={`/club/${club.id}`} className="club-learn-more">Learn More</Link>
+                <button className="club-join" disabled>Join</button>
               </div>
-              <div className="club-card-shine" />
             </motion.div>
           ))}
         </div>

@@ -5,124 +5,55 @@
   transition: var(--transition);
 }
 
-.navbar.scrolled {
-  box-shadow: 0 4px 0 var(--border);
-}
+.navbar.scrolled { box-shadow: 0 4px 0 var(--border); }
 
 .nav-container {
-  max-width: 1200px; margin: 0 auto; padding: 0 28px;
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between;
-  height: 68px;
+  height: 64px;
 }
 
+/* Logo */
 .nav-logo {
   display: flex; align-items: center; gap: 10px; text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-logo-img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  border: 2px solid var(--ink);
-  box-shadow: 2px 2px 0 var(--ink);
+  width: 34px; height: 34px; object-fit: contain;
+  border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink);
 }
 
 .logo-text {
-  font-size: 1.2rem; font-weight: 800;
+  font-size: 1.15rem; font-weight: 800;
   color: var(--text); letter-spacing: -0.02em;
 }
 
 .logo-accent {
-  font-family: var(--font-hand);
-  font-size: 1.4rem;
-  color: var(--primary);
-  font-weight: 700;
+  font-family: var(--font-hand); font-size: 1.35rem;
+  color: var(--primary); font-weight: 700;
 }
 
+/* Desktop nav links */
 .nav-links { display: flex; list-style: none; gap: 4px; }
 
 .nav-link {
   position: relative; padding: 8px 16px;
   font-size: 0.88rem; font-weight: 600;
-  color: var(--text-secondary);
-  transition: var(--transition);
+  color: var(--text-secondary); transition: var(--transition);
 }
 
 .nav-link:hover { color: var(--text); }
 
 .nav-link-indicator {
   position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
-  width: 0; height: 2px; background: var(--primary);
-  transition: var(--transition);
+  width: 0; height: 2px; background: var(--primary); transition: var(--transition);
 }
 
 .nav-link:hover .nav-link-indicator { width: 80%; }
 
-.nav-cta {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 8px 20px;
-  background: var(--primary); color: #fff;
-  font-size: 0.85rem; font-weight: 700;
-  border: 2px solid var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
-  cursor: pointer; transition: var(--transition);
-  text-decoration: none;
-}
-
-.nav-cta:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--ink);
-}
-
-.nav-hamburger {
-  display: none; background: none; border: none;
-  color: var(--text); cursor: pointer; padding: 4px;
-}
-
-.mobile-menu {
-  overflow: hidden; padding: 16px 28px 24px;
-  display: flex; flex-direction: column; gap: 8px;
-  border-top: 2px dashed var(--border-hover);
-  background: var(--bg);
-}
-
-.mobile-link {
-  padding: 12px 16px; font-size: 1rem; font-weight: 600;
-  color: var(--text-secondary); transition: var(--transition);
-  border: none; background: none; text-align: left; cursor: pointer;
-}
-
-.mobile-link:hover { color: var(--text); background: var(--surface-hover); }
-
-.mobile-cta { margin-top: 8px; text-align: center; justify-content: center; }
-.mobile-logout { color: var(--primary) !important; }
-
-/* Theme toggle */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 2px solid var(--ink);
-  background: var(--bg);
-  color: var(--text);
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 2px 2px 0 var(--ink);
-  margin-right: 10px;
-}
-
-.theme-toggle:hover {
-  background: var(--primary);
-  color: #fff;
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 var(--ink);
-}
-
-/* Nav right */
+/* Desktop auth buttons */
 .nav-right { display: flex; align-items: center; }
-
 .nav-auth-btns { display: flex; align-items: center; gap: 10px; }
 
 .nav-signin {
@@ -133,12 +64,25 @@
 
 .nav-signin:hover { color: var(--text); border-bottom: 2px solid var(--text); }
 
-.page-loader {
-  min-height: 100vh; display: flex; align-items: center;
-  justify-content: center; background: var(--bg);
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 20px; background: var(--primary); color: #fff;
+  font-size: 0.85rem; font-weight: 700;
+  border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer; transition: var(--transition); text-decoration: none;
 }
 
-/* User dropdown */
+.nav-cta:hover {
+  transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink);
+}
+
+/* Hamburger */
+.nav-hamburger {
+  display: none; background: none; border: none;
+  color: var(--text); cursor: pointer; padding: 8px;
+}
+
+/* Desktop user */
 .nav-user-wrap { position: relative; }
 
 .nav-avatar {
@@ -162,8 +106,8 @@
 
 .dropdown-header { padding: 10px 12px; }
 .dropdown-name { display: block; font-size: 0.9rem; font-weight: 700; color: var(--text); }
-.dropdown-role { font-size: 0.75rem; color: var(--text-muted); text-transform: capitalize; font-family: var(--font-hand); font-size: 0.9rem; }
-.dropdown-divider { height: 2px; background: var(--border); margin: 4px 0; border: none; border-top: 1px dashed var(--border-hover); }
+.dropdown-role { font-size: 0.9rem; color: var(--text-muted); text-transform: capitalize; font-family: var(--font-hand); }
+.dropdown-divider { height: 0; border: none; border-top: 1px dashed var(--border-hover); margin: 4px 0; }
 
 .dropdown-item {
   width: 100%; padding: 9px 12px; background: none; border: none;
@@ -173,7 +117,103 @@
 
 .dropdown-item:hover { background: var(--surface-hover); color: var(--primary); }
 
+/* Page loader */
+.page-loader {
+  min-height: 100vh; display: flex; align-items: center;
+  justify-content: center; background: var(--bg);
+}
+
+/* ========== MOBILE MENU ========== */
+.mobile-menu {
+  overflow: hidden; padding: 16px 24px 24px;
+  display: flex; flex-direction: column; gap: 4px;
+  border-top: 2px dashed var(--border-hover);
+  background: var(--bg);
+}
+
+.mobile-link {
+  padding: 14px 16px; font-size: 1rem; font-weight: 600;
+  color: var(--text-secondary); transition: var(--transition);
+  border: none; background: none; text-align: left; cursor: pointer;
+  text-decoration: none; display: block;
+}
+
+.mobile-link:hover { color: var(--text); background: var(--surface-hover); }
+
+.mobile-divider {
+  height: 0; border: none;
+  border-top: 2px dashed var(--border-hover);
+  margin: 8px 0;
+}
+
+/* Mobile user info */
+.mobile-user-info {
+  padding: 12px 16px;
+}
+
+.mobile-user-name {
+  display: block; font-size: 1rem; font-weight: 700; color: var(--text);
+}
+
+.mobile-user-role {
+  font-size: 0.82rem; color: var(--text-muted); text-transform: capitalize;
+  font-family: var(--font-hand); font-size: 0.95rem;
+}
+
+.mobile-logout-btn {
+  padding: 12px 16px;
+  background: none; border: 2px solid var(--red);
+  color: var(--red); font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: var(--transition);
+  text-align: center; width: 100%;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.mobile-logout-btn:hover {
+  background: var(--red); color: #fff;
+}
+
+/* Mobile auth buttons */
+.mobile-auth-btns {
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.mobile-signin {
+  display: block; padding: 14px 16px;
+  text-align: center; font-size: 0.95rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: var(--transition);
+}
+
+.mobile-signin:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.mobile-signup {
+  display: block; padding: 14px 16px;
+  text-align: center; font-size: 0.95rem; font-weight: 700;
+  color: #fff; text-decoration: none;
+  background: var(--primary);
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: var(--transition);
+}
+
+.mobile-signup:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .nav-links, .nav-container > .nav-cta, .nav-auth-btns { display: none; }
+  .nav-links { display: none; }
+  .desktop-only { display: none; }
   .nav-hamburger { display: block; }
+  .nav-container { padding: 0 16px; height: 60px; }
+  .nav-logo-img { width: 30px; height: 30px; }
+  .logo-text { font-size: 1.05rem; }
+  .logo-accent { font-size: 1.2rem; }
 }

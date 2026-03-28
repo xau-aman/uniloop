@@ -147,6 +147,9 @@
 }
 
 @media (max-width: 768px) {
-  .events-section { padding: 70px 0; }
+  .events-section { padding: 60px 0; }
   .events-grid { grid-template-columns: 1fr; }
+  .section-container { padding: 0 16px; }
+  .filter-bar { gap: 6px; margin-bottom: 32px; }
+  .filter-chip { padding: 6px 16px; font-size: 0.8rem; }
 }

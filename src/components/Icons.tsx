@@ -163,3 +163,11 @@ export const IconMoon: React.FC<Props> = ({ size = 20, className }) => (
     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
   </svg>
 );
+
+export const IconInstagram: React.FC<Props> = ({ size = 20, className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5"/>
+    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+  </svg>
+);

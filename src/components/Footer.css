@@ -91,10 +91,13 @@
 }
 
 @media (max-width: 768px) {
-  .cta-card { padding: 44px 24px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .cta-card { padding: 40px 20px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .section-container { padding: 0 16px; }
 }
 
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
+  .cta-title { font-size: 1.3rem; }
+  .cta-btn { padding: 12px 24px; font-size: 0.88rem; width: 100%; justify-content: center; }
 }

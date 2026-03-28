@@ -63,7 +63,6 @@ const Footer: React.FC = () => {
               <h4>Platform</h4>
               <a href="#events">Events</a>
               <a href="#clubs">Clubs</a>
-              <a href="#activity">Activity</a>
             </div>
             <div className="footer-col">
               <h4>Support</h4>

@@ -11,12 +11,12 @@ import "./components/Doodles.css";
 
 const Events = lazy(() => import("./components/Events"));
 const Clubs = lazy(() => import("./components/Clubs"));
-const Activity = lazy(() => import("./components/Activity"));
 const Footer = lazy(() => import("./components/Footer"));
 const AuthPage = lazy(() => import("./components/auth/AuthPage"));
 const ClubAuthPage = lazy(() => import("./components/auth/ClubAuthPage"));
 const AdminLogin = lazy(() => import("./components/admin/AdminLogin"));
 const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
+const ClubDetail = lazy(() => import("./components/ClubDetail"));
 
 const Loader: React.FC = () => (
   <div className="page-loader"><span className="auth-spinner" /></div>
@@ -29,7 +29,6 @@ const LandingPage: React.FC = () => (
     <Suspense fallback={<Loader />}>
       <Events />
       <Clubs />
-      <Activity />
       <Footer />
     </Suspense>
   </>
@@ -42,7 +41,6 @@ const Dashboard: React.FC = () => (
     <Suspense fallback={<Loader />}>
       <Events />
       <Clubs />
-      <Activity />
       <Footer />
     </Suspense>
   </>
@@ -62,6 +60,7 @@ const AppRoutes: React.FC = () => (
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/auth/club" element={<ClubAuthPage />} />
       <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+      <Route path="/club/:id" element={<ClubDetail />} />
       <Route path="/admin" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
       <Route path="*" element={<Navigate to="/" replace />} />

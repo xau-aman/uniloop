@@ -275,16 +275,21 @@
 .alt-dot-student { background: var(--primary); }
 
 @media (max-width: 768px) {
-  .auth-wrapper { flex-direction: column; max-width: 460px; min-height: auto; }
+  .auth-page { padding: 16px; }
+  .auth-wrapper { flex-direction: column; max-width: 480px; min-height: auto; }
   .auth-brand-panel { flex: none; padding: 28px 24px; }
   .auth-brand-content h2 { font-size: 1.4rem; }
+  .auth-brand-stats { gap: 16px; }
   .auth-form-panel { padding: 28px 24px; }
+  .auth-topbar { flex-direction: column; gap: 12px; align-items: flex-start; }
 }
 
 @media (max-width: 480px) {
-  .auth-page { padding: 12px; }
-  .auth-brand-panel { padding: 22px 18px; }
-  .auth-form-panel { padding: 22px 18px; }
+  .auth-page { padding: 8px; }
+  .auth-brand-panel { padding: 20px 16px; }
+  .auth-form-panel { padding: 20px 16px; }
   .form-btn-row { flex-direction: column; }
   .auth-back { text-align: center; }
+  .auth-submit { font-size: 0.88rem; }
+  .auth-form-header h1 { font-size: 1.3rem; }
 }

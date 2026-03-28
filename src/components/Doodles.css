@@ -57,6 +57,17 @@
 .side-cross-1 { color: var(--primary); animation: doodleFloat 5s ease-in-out infinite; }
 .side-dots-1 { color: var(--red); animation: doodleFloat 7s ease-in-out infinite; animation-delay: -2s; }
 
+/* Graffiti doodles */
+.side-lightning-1 { color: var(--warning); animation: doodlePulse 3s ease-in-out infinite; }
+.side-lightning-2 { color: var(--red); animation: doodlePulse 3.5s ease-in-out infinite; animation-delay: -1.5s; }
+.side-spiral-1 { color: var(--accent); animation: doodleSpin 15s linear infinite; }
+.side-squiggle-1 { color: var(--red-light); animation: doodleFloat 5s ease-in-out infinite; animation-delay: -1s; }
+.side-excl-1 { color: var(--red); animation: doodlePulse 2s ease-in-out infinite; }
+.side-excl-2 { color: var(--warning); animation: doodlePulse 2.5s ease-in-out infinite; animation-delay: -1s; }
+.side-splat-1 { color: var(--primary); opacity: 0.08; }
+.side-splat-2 { color: var(--red); opacity: 0.06; }
+.side-garrow-1 { color: var(--accent); animation: doodleFloat 6s ease-in-out infinite; animation-delay: -3s; }
+
 @keyframes planeFloat {
   0%, 100% { transform: translateY(0) rotate(var(--plane-rot, -25deg)); }
   50% { transform: translateY(-16px) rotate(var(--plane-rot, -25deg)); }

@@ -7,7 +7,6 @@ import "./Navbar.css";
 const navItems = [
   { label: "Events", href: "#events" },
   { label: "Clubs", href: "#clubs" },
-  { label: "Activity", href: "#activity" },
 ];
 
 const Navbar: React.FC = () => {
@@ -20,6 +19,13 @@ const Navbar: React.FC = () => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on resize
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth > 768) setMobileOpen(false); };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return (
@@ -48,7 +54,8 @@ const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        <div className="nav-right">
+        {/* Desktop auth/user */}
+        <div className="nav-right desktop-only">
           {user ? (
             <div className="nav-user-wrap">
               <button
@@ -96,6 +103,7 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -118,15 +126,24 @@ const Navbar: React.FC = () => {
                 {item.label}
               </motion.a>
             ))}
+
+            <div className="mobile-divider" />
+
             {user ? (
-              <button className="mobile-link mobile-logout" onClick={() => { logout(); setMobileOpen(false); }}>
-                Sign Out
-              </button>
-            ) : (
               <>
-                <a href="/auth" className="mobile-link" onClick={() => setMobileOpen(false)}>Sign In</a>
-                <a href="/auth" className="nav-cta mobile-cta" onClick={() => setMobileOpen(false)}>Sign Up</a>
+                <div className="mobile-user-info">
+                  <span className="mobile-user-name">{user.name}</span>
+                  <span className="mobile-user-role">{user.role}</span>
+                </div>
+                <button className="mobile-logout-btn" onClick={() => { logout(); setMobileOpen(false); }}>
+                  Sign Out
+                </button>
               </>
+            ) : (
+              <div className="mobile-auth-btns">
+                <a href="/auth" className="mobile-signin" onClick={() => setMobileOpen(false)}>Sign In</a>
+                <a href="/auth" className="mobile-signup" onClick={() => setMobileOpen(false)}>Sign Up</a>
+              </div>
             )}
           </motion.div>
         )}
