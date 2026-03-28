@@ -1,0 +1,150 @@
+/* Font loaded via index.html preconnect */
+
+/* ========== LIGHT THEME (default) ========== */
+:root,
+[data-theme="light"] {
+  --primary: #7B2D8E;
+  --primary-light: #9B59B6;
+  --primary-dark: #5B1F6A;
+  --primary-glow: rgba(123, 45, 142, 0.15);
+  --accent: #2F5496;
+  --accent-light: #4A7BC8;
+  --accent-glow: rgba(47, 84, 150, 0.12);
+  --red: #C0392B;
+  --red-light: #E74C3C;
+  --success: #5D8A3C;
+  --warning: #D4A017;
+
+  --bg: #F5F0E8;
+  --bg-card: #FFFDF7;
+  --bg-card-hover: #FFF9EE;
+  --bg-elevated: #F0EBE0;
+  --surface: rgba(139, 90, 43, 0.04);
+  --surface-hover: rgba(139, 90, 43, 0.08);
+
+  --text: #2C1810;
+  --text-secondary: #6B5744;
+  --text-muted: #9C8B7A;
+
+  --border: rgba(44, 24, 16, 0.1);
+  --border-hover: rgba(44, 24, 16, 0.2);
+  --border-sketch: 2px solid #2C1810;
+
+  --shadow: 3px 3px 0 rgba(44, 24, 16, 0.08);
+  --shadow-lg: 5px 5px 0 rgba(44, 24, 16, 0.1);
+  --shadow-glow: 4px 4px 0 var(--primary-glow);
+
+  --ink: #2C1810;
+  --paper-line: rgba(44, 24, 16, 0.03);
+  --marquee-bg: #2C1810;
+  --marquee-text: #F5F0E8;
+  --card-img-filter: sepia(0.15) contrast(1.05);
+  --noise-blend: multiply;
+  --overlay-gradient: rgba(245, 240, 232, 0.5);
+}
+
+/* ========== DARK THEME ========== */
+[data-theme="dark"] {
+  --primary: #A855F7;
+  --primary-light: #C084FC;
+  --primary-dark: #7E22CE;
+  --primary-glow: rgba(168, 85, 247, 0.2);
+  --accent: #60A5FA;
+  --accent-light: #93C5FD;
+  --accent-glow: rgba(96, 165, 250, 0.15);
+  --red: #EF4444;
+  --red-light: #F87171;
+  --success: #4ADE80;
+  --warning: #FBBF24;
+
+  --bg: #121218;
+  --bg-card: #1A1A24;
+  --bg-card-hover: #22222E;
+  --bg-elevated: #1E1E2A;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+
+  --text: #EDEDED;
+  --text-secondary: #A0A0B0;
+  --text-muted: #6B6B80;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --border-sketch: 2px solid #EDEDED;
+
+  --shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  --shadow-lg: 5px 5px 0 rgba(0, 0, 0, 0.4);
+  --shadow-glow: 4px 4px 0 var(--primary-glow);
+
+  --ink: #EDEDED;
+  --paper-line: rgba(255, 255, 255, 0.03);
+  --marquee-bg: #EDEDED;
+  --marquee-text: #121218;
+  --card-img-filter: brightness(0.85) contrast(1.1);
+  --noise-blend: screen;
+  --overlay-gradient: rgba(18, 18, 24, 0.6);
+}
+
+/* ========== SHARED ========== */
+:root {
+  --radius: 4px;
+  --radius-sm: 3px;
+  --radius-xs: 2px;
+  --transition: 0.2s ease;
+  --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --font-hand: 'Caveat', cursive;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      var(--paper-line) 31px,
+      var(--paper-line) 32px
+    );
+  background-size: 100% 32px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 0; border: 1px solid var(--ink); }
+
+::selection { background: var(--primary); color: #fff; }
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+img { max-width: 100%; display: block; }
+
+/* Smooth theme transition on key elements */
+body,
+.navbar,
+.event-card,
+.club-card,
+.activity-card,
+.auth-wrapper,
+.admin-login-card,
+.admin-header,
+.admin-stat-card,
+.admin-table-wrap,
+.cta-card,
+.footer,
+.hero-stat,
+.hero-badge,
+.filter-chip,
+.marquee-strip {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}

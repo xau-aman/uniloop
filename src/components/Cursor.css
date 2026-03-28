@@ -1,0 +1,32 @@
+/* Figma-style pointer cursor — SVG arrow */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 2l12 7.5L9 11l-2.5 6.5L3 2z' fill='%232C1810' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E") 3 1, auto !important;
+}
+
+[data-theme="dark"] * {
+  cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 2l12 7.5L9 11l-2.5 6.5L3 2z' fill='%23EDEDED' stroke='%23121218' stroke-width='1'/%3E%3C/svg%3E") 3 1, auto !important;
+}
+
+/* Pointer cursor for interactive elements */
+a, button, input, select, textarea, [role="button"] {
+  cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 2l12 7.5L9 11l-2.5 6.5L3 2z' fill='%237B2D8E' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E") 3 1, pointer !important;
+}
+
+[data-theme="dark"] a,
+[data-theme="dark"] button,
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea,
+[data-theme="dark"] [role="button"] {
+  cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 2l12 7.5L9 11l-2.5 6.5L3 2z' fill='%23A855F7' stroke='%23121218' stroke-width='1'/%3E%3C/svg%3E") 3 1, pointer !important;
+}
+
+/* Hide JS cursor elements — we're using pure CSS now */
+.cursor-dot,
+.cursor-ring { display: none !important; }
+
+/* Touch devices — use default */
+@media (hover: none), (pointer: coarse) {
+  * { cursor: auto !important; }
+  a, button, input, select, textarea, [role="button"] { cursor: pointer !important; }
+}
